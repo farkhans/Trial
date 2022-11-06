@@ -7,6 +7,7 @@ public class IntegralNumerikCMD {
 
     public IntegralNumerikCMD() {
         System.out.println("Selamat datang di kalkulator integral numerik!");
+        // Ubah keterangan jika diperlukan
         System.out.println("Kalkulator ini menghitung hasil dari integral tentu e^(x^2) secara numerik");
         System.out.println();
 
@@ -35,13 +36,13 @@ public class IntegralNumerikCMD {
 
                 switch (newtonCotes) {
                     case "1":
-                        System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode midpoint adalah %f%n", lowerBound, upperBound, midpoint());
+                        System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode midpoint adalah %3.3E%n", lowerBound, upperBound, midpoint());
                         break;
                     case "2":
-                        System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode trapezoid adalah %f%n", lowerBound, upperBound, trapezoid());
+                        System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode trapezoid adalah %3.3E%n", lowerBound, upperBound, trapezoid());
                         break;
                     case "3":
-                        System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode simpson adalah %f%n", lowerBound, upperBound, simpson());
+                        System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode simpson adalah %3.3E%n", lowerBound, upperBound, simpson());
                         break;
                     default:
                         System.out.println("Input tidak valid!");
@@ -69,13 +70,13 @@ public class IntegralNumerikCMD {
                     stepSize = (upperBound - lowerBound) / subintervals;
                     switch (composite) {
                         case "1":
-                            System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode composite midpoint adalah %f%n", lowerBound, upperBound, compositeMidpoint());
+                            System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode composite midpoint adalah %3.3E%n", lowerBound, upperBound, compositeMidpoint());
                             break;
                         case "2":
-                            System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode composite trapezoid adalah %f%n", lowerBound, upperBound, compositeTrapezoid());
+                            System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode composite trapezoid adalah %3.3E%n", lowerBound, upperBound, compositeTrapezoid());
                             break;
                         case "3":
-                            System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode composite Simpson adalah %f%n", lowerBound, upperBound, compositeSimpson());
+                            System.out.printf("Hasil integral tentu fungsi pada interval [%f, %f] dengan metode composite Simpson adalah %3.3E%n", lowerBound, upperBound, compositeSimpson());
                             break;
                         default:
                             System.out.println("Input tidak valid!");
@@ -90,7 +91,7 @@ public class IntegralNumerikCMD {
         }
     }
 
-    
+    // Ubah fungsi ini jika ingin menggunakan fungsi matematika lain
     private final double f(double x) {
         return Math.exp(Math.pow(x, 2));
     }
