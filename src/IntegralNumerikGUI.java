@@ -34,7 +34,7 @@ public class IntegralNumerikGUI  extends JFrame {
     public double compositeTrapezoid(double upperBound, double lowerBound, int subintervals) {
         double res = (f(lowerBound) + f(upperBound)) / 2;
         double stepSize = (upperBound - lowerBound) / subintervals;
-        for (int i = 1; i < subintervals - 1; i++) {
+        for (int i = 1; i < subintervals; i++) {
             res += f(lowerBound + stepSize * i);
         }
         return res * stepSize;
@@ -45,9 +45,7 @@ public class IntegralNumerikGUI  extends JFrame {
         double res = f(lowerBound) + f(upperBound);
         for (int i = 0; i < subintervals; i++) {
             res += 4 * f(lowerBound + (i + 0.5) * stepSize);
-        }
-        for (int i = 1; i < subintervals; i++) {
-            res += 2 * f(lowerBound + i * stepSize);
+            if (i > 0) res += 2 * f(lowerBound + i * stepSize);
         }
         return res * stepSize / 6;
     }
